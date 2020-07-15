@@ -4,8 +4,6 @@ Hi, I'm vvni, a passionate self-taught frontEnd web developer from China 🇨�
 
 - 🔭 I’m currently working on internet medical project.
 - 🌱 I’m currently learning Angular.
-<!-- - 👯 I’m looking to collaborate on ... -->
-<!-- - 🤔 I’m looking for help with ... -->
 - 💬 Ask me about anything here. [wechat: qq86124405]
 - 📫 How to reach me: vvni980219@gmail.com
 - 😄 Pronouns: Husband.
