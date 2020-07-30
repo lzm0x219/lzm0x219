@@ -7,7 +7,7 @@ Hi, I'm vvni, a passionate self-taught frontEnd web developer from China 🇨�
 - 💬 Ask me about anything here. [wechat: qq86124405]
 - ⚡ Seems to be getting fatter.
 
-[![Top Langs](https://github-readme-stats.vvni.vercel.app/api/top-langs/?username=vvni)](https://github.com/anuraghazra/github-readme-stats)
+[![Top Langs](https://github-readme-stats.vvni.vercel.app/api/top-langs/?username=vvni&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
 **Languages and Tools:**  
 
