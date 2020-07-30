@@ -2,8 +2,8 @@
 
 Hi, I'm vvni, a passionate self-taught frontEnd web developer from China 🇨🇳.
 
-- 🔭 I’m currently working on internet medical project.
-- 🌱 I’m currently learning Angular.
+- 🔭 I’m currently looking for a job.
+- 🌱 I’m currently learning Rust.
 - 💬 Ask me about anything here. [wechat: qq86124405]
 - 📫 vvni980219@gmail.com
 - 😄 -.-
