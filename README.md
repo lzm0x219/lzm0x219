@@ -6,7 +6,7 @@ Hi, I'm vvni, a passionate self-taught frontEnd web developer from China 🇨�
 - 🌱 I’m currently learning Angular.
 - 💬 Ask me about anything here. [wechat: qq86124405]
 - 📫 vvni980219@gmail.com
-- 😄 Husband.
+- 😄 -.-
 - ⚡ Seems to be getting fatter.
 
 **Languages and Tools:**  
