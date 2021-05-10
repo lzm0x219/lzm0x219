@@ -2,10 +2,7 @@
 
 Hi, I'm vvni, a passionate self-taught frontEnd web developer from China 🇨🇳.
 
-- 🔭 I am working overtime every day.
-- 🌱 I’m currently learning Rust.
-- 💬 Ask me about anything here. [wechat: qq86124405]
-- ⚡ Seems to be getting fatter.
+- 🌱 Reinvent yourself.
 
 **Languages and Tools:**  
 
