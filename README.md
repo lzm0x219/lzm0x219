@@ -15,4 +15,6 @@ Hi, I'm vvni, a passionate self-taught frontEnd web developer from China ðŸ‡¨ðŸ‡
 <code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"></code>
 <code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/terminal/terminal.png"></code>
 
-[![Top Langs](https://github-readme-stats.vvni.vercel.app/api/top-langs/?username=vvni&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+[![vvni's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=vvni&layout=compact&border_radius=0&range=last_7_days&title_color=333&border_color=F2F5F3)](https://github.com/anuraghazra/github-readme-stats)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=vvni&layout=compact&border_radius=0&title_color=333&border_color=F2F5F3)](https://github.com/anuraghazra/github-readme-stats)
