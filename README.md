@@ -1,6 +1,6 @@
 ### Hi there, I'm [0x219!]() 👋
 
-Hi, I'm vvni, a passionate self-taught frontEnd web developer from China 🇨🇳.
+Hi, I'm 0x219, a passionate self-taught frontEnd web developer from China 🇨🇳.
 
 - 🌱 Reinvent yourself.
 
