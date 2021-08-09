@@ -4,6 +4,7 @@ Hi, I'm 0x219, a passionate self-taught frontEnd web developer from China 🇨�
 
 - 🌱 Reinvent yourself.
 - 🍻 I love Gregorian Chants ~.
+- 💗 WeChat: 86124405
 
 **Languages and Tools:**  
 
