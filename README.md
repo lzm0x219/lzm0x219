@@ -6,7 +6,7 @@ Hi, I'm 0x219, a passionate self-taught frontEnd web developer from China 🇨�
 - 🍻 I love Gregorian Chants ~.
 - 💗 WeChat: `86124405`.
 
-**Languages and Tools:**  
+#### 🍪 Languages and Tools:
 
 <code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>
 <code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png"></code>
@@ -17,6 +17,6 @@ Hi, I'm 0x219, a passionate self-taught frontEnd web developer from China 🇨�
 <code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"></code>
 <code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/terminal/terminal.png"></code>
 
-#### 🥤 This is what I am going to do next：
+#### 🥟 This is what I am going to do next：
 - [ ] A React component library
 - [ ] A financial software
