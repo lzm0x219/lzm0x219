@@ -1,6 +1,8 @@
 ### Hi there, I'm [0x219!]() <img src="https://emojis.slackmojis.com/emojis/images/1588866973/8934/hellokittydance.gif?1588866973" alt="Hi" width="30" />
 
-🇷🇺 普京大帝万岁 ~~~  乌拉~~~~~
+**Emotionally sympathetic to the Ukrainian people, but not to the Ukrainian government.**
+
+🇷🇺 乌拉~~~~~
 
 Hi, I'm 0x219, a passionate self-taught frontEnd web developer from China 🇨🇳.
 
