@@ -24,5 +24,5 @@ Hi, I'm 0x219, a passionate self-taught frontEnd web developer from China 🇨�
 > Disappointed with **React** getting involved in politics. Will not use it for new projects.
 
 #### 🥟 This is what I am going to do next：
-- [ ] `A React component library`
+- [ ] `A component library`
 - [ ] `A financial software`
