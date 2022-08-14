@@ -1,3 +1,12 @@
-论心不论迹，论迹贫家无孝子，论迹不论心，论心世上少完人
+# Hi 👋, I'm 尾宿君 <img src="https://gpvc.arturio.dev/0x219" align="right" />
 
-![Profile views](https://gpvc.arturio.dev/0x219) <img src="https://emojis.slackmojis.com/emojis/images/1588866973/8934/hellokittydance.gif?1588866973" alt="Hi" height="35" />
+🇨🇳 A passionate technology developer from **China**.
+
+<img src="https://emojis.slackmojis.com/emojis/images/1588866973/8934/hellokittydance.gif?1588866973" alt="Hi" width="80" align="right" /> 
+
+
+- 🌱 I’m currently learning **Go**.
+
+- 💬 Ask me about **anything**.
+
+- 📫 How to reach me **lzm0x219@gmail.com**.
