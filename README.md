@@ -7,7 +7,7 @@ I'm **Bird Monet**, a passionate developer from China 🇨🇳.
 - 🔭 I'm working overtime every day.
 - 🌱 I'm currently learning Rust.
 - 💬 Ask me about anything here. [Wechat: qq86124405]
-- <img src="./cat.gif" width="24" /> Learning rust.
+- <img src="./cat.gif" width="22" /> Learning rust.
 
 **Languages and Tools:**  
 
