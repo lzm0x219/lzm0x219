@@ -17,3 +17,5 @@ I'm **Monet Bird**, a passionate developer from China 🇨🇳.
 <code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png"></code>
 <code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"></code>
 <code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/terminal/terminal.png"></code>
+
+<img src="https://api.githubtrends.io/user/svg/lzm0x219/langs?time_range=one_year&include_private=True&compact=True&theme=classic" />
