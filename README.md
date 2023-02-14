@@ -1,6 +1,6 @@
 ### Hello ~ <img src="https://emojis.slackmojis.com/emojis/images/1588866973/8934/hellokittydance.gif?1588866973" alt="Hi" width="40" /> <img src="https://visitor-badge.glitch.me/badge?page_id=lzm0x219.visitor-badge" align="right" />
 
-I'm **Simon**, a passionate developer from China 🇨🇳.
+I'm **ZiMing Liu**, a passionate developer from China 🇨🇳.
 
 - 🔭 I'm working overtime every day.
 - 🌱 I'm currently learning Rust.
