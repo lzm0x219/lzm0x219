@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" role="img"
+  aria-labelledby="title desc">
+  <title id="title">参伍罗盘</title>
+  <desc id="desc">先天八卦罗盘。悬停或聚焦看一卦。</desc>
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    .slab {
+      fill: url(#stone-fill);
+      filter: url(#grain);
+    }
+
+    .inset {
+      fill: none;
+      stroke: #c4a35a;
+      stroke-width: 0.8;
+    }
+
+    .tick {
+      stroke: #7d6430;
+      stroke-width: 0.6;
+    }
+
+    .tick-major {
+      stroke: #c9a24a;
+      stroke-width: 1.2;
+    }
+
+    .ring {
+      fill: none;
+      stroke: #c9a24a;
+      stroke-width: 0.8;
+      opacity: 0.7;
+    }
+
+    .ring.dim {
+      stroke: #7d6430;
+      stroke-width: 0.5;
+      opacity: 0.8;
+    }
+
+    .gua {
+      cursor: pointer;
+    }
+
+    .slice {
+      fill: #2a1d28;
+      fill-opacity: 0.35;
+      stroke: #8a7340;
+      stroke-width: 0.6;
+      transition: fill 0.25s, fill-opacity 0.25s, stroke 0.25s;
+    }
+
+    .gua-name {
+      fill: #e6d2ae;
+      font: 16px/1 "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+
+    .yao-mark {
+      stroke: #e6d2ae;
+      stroke-width: 2.1;
+      stroke-linecap: square;
+      pointer-events: none;
+    }
+
+    .gua:hover .slice,
+    .gua:focus-visible .slice {
+      fill: #c41e3a;
+      fill-opacity: 0.88;
+      stroke: #e6d2ae;
+    }
+
+    .gua:hover .gua-name,
+    .gua:focus-visible .gua-name {
+      fill: #f4e6c8;
+    }
+
+    .gua:hover .yao-mark,
+    .gua:focus-visible .yao-mark {
+      stroke: #f4e6c8;
+    }
+
+    .gua:focus {
+      outline: none;
+    }
+
+    .gua:focus-visible .slice {
+      stroke-width: 1.4;
+    }
+
+    .well {
+      outline: none;
+    }
+
+    .plaque {
+      fill: #e6d2ae;
+      font: 15px/1 "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+      letter-spacing: 0.38em;
+    }
+
+    .plaque-rule {
+      stroke: #7d6430;
+      stroke-width: 0.55;
+    }
+
+    .plaque.center {
+      text-anchor: middle;
+    }
+
+    .seal-bg {
+      fill: #c41e3a;
+    }
+
+    .seal-ch {
+      fill: #1a1218;
+      font: 700 13px/1 "Songti SC", "STSong", "SimSun", serif;
+      text-anchor: middle;
+    }
+
+    .panel {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+
+    #info-home {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .kicker {
+      fill: #9a8768;
+      font: 12px/1 "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      letter-spacing: 0.32em;
+    }
+
+    .display {
+      fill: #f1e2c4;
+      font: 600 40px/1 "Songti SC", "STSong", "Noto Serif CJK SC", "SimSun", serif;
+    }
+
+    .xiang {
+      fill: #e6d2ae;
+      font: 18px/1 "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      letter-spacing: 0.18em;
+    }
+
+    .verse {
+      fill: #cbb892;
+      font: 17px/1 "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+    }
+
+    .meta-label {
+      fill: #6b5a62;
+      font: 11px/1 "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      letter-spacing: 0.24em;
+    }
+
+    .meta-val {
+      fill: #e6d2ae;
+      font: 15px/1 "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+    }
+
+    .colophon {
+      fill: #7a6a70;
+      font: 13px/1 "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+    }
+
+    .entry-k {
+      fill: #6b5a62;
+      font: 12px/1 "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      letter-spacing: 0.12em;
+    }
+
+    .entry-v {
+      fill: #cbb892;
+      font: 14px/1 "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+    }
+
+    .rule {
+      stroke: #7d6430;
+      stroke-width: 0.55;
+    }
+
+    .spine {
+      stroke: #7d6430;
+      stroke-width: 0.5;
+      opacity: 0.7;
+    }
+
+    .yao-lg {
+      stroke: #e6d2ae;
+      stroke-width: 2.5;
+      stroke-linecap: square;
+      fill: none;
+    }
+
+    .luoshu-box {
+      fill: none;
+      stroke: #7d6430;
+      stroke-width: 0.5;
+    }
+
+    .paper {
+      fill: #efe6d2;
+      stroke: #3a2a20;
+      stroke-width: 1.1;
+    }
+
+    .paper-inset {
+      fill: none;
+      stroke: #8a7340;
+      stroke-width: 0.5;
+    }
+
+    .dot-yang {
+      fill: #fbf7ef;
+      stroke: #1a1218;
+      stroke-width: 0.7;
+    }
+
+    .dot-yin {
+      fill: #1a1218;
+    }
+
+    .dot-link {
+      fill: none;
+      stroke: #1a1218;
+      stroke-width: 0.8;
+    }
+
+    #gua-li:hover~#info #info-home,
+    #gua-li:focus-visible~#info #info-home {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #gua-kun:hover~#info #info-home,
+    #gua-kun:focus-visible~#info #info-home {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #gua-dui:hover~#info #info-home,
+    #gua-dui:focus-visible~#info #info-home {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #gua-qian:hover~#info #info-home,
+    #gua-qian:focus-visible~#info #info-home {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #gua-kan:hover~#info #info-home,
+    #gua-kan:focus-visible~#info #info-home {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #gua-gen:hover~#info #info-home,
+    #gua-gen:focus-visible~#info #info-home {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #gua-zhen:hover~#info #info-home,
+    #gua-zhen:focus-visible~#info #info-home {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #gua-xun:hover~#info #info-home,
+    #gua-xun:focus-visible~#info #info-home {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #gua-li:hover~#info #info-li,
+    #gua-li:focus-visible~#info #info-li {
+      opacity: 1;
+    }
+
+    #gua-kun:hover~#info #info-kun,
+    #gua-kun:focus-visible~#info #info-kun {
+      opacity: 1;
+    }
+
+    #gua-dui:hover~#info #info-dui,
+    #gua-dui:focus-visible~#info #info-dui {
+      opacity: 1;
+    }
+
+    #gua-qian:hover~#info #info-qian,
+    #gua-qian:focus-visible~#info #info-qian {
+      opacity: 1;
+    }
+
+    #gua-kan:hover~#info #info-kan,
+    #gua-kan:focus-visible~#info #info-kan {
+      opacity: 1;
+    }
+
+    #gua-gen:hover~#info #info-gen,
+    #gua-gen:focus-visible~#info #info-gen {
+      opacity: 1;
+    }
+
+    #gua-zhen:hover~#info #info-zhen,
+    #gua-zhen:focus-visible~#info #info-zhen {
+      opacity: 1;
+    }
+
+    #gua-xun:hover~#info #info-xun,
+    #gua-xun:focus-visible~#info #info-xun {
+      opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .spin {
+        animation: none !important;
+      }
+
+      .panel,
+      .slice {
+        transition: none;
+      }
+    }
+  </style>
+  <defs>
+    <linearGradient id="stone-fill" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#241820" />
+      <stop offset="0.48" stop-color="#1a1218" />
+      <stop offset="1" stop-color="#120d14" />
+    </linearGradient>
+    <radialGradient id="ink" cx="38%" cy="36%" r="70%">
+      <stop offset="0" stop-color="#2a2a32" />
+      <stop offset="0.42" stop-color="#0c0c10" />
+      <stop offset="1" stop-color="#050506" />
+    </radialGradient>
+    <filter id="grain" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="7" result="n" />
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.18  0 0 0 0 0.12  0 0 0 0 0.14  0 0 0 0.18 0" result="t" />
+      <feBlend in="SourceGraphic" in2="t" mode="overlay" />
+    </filter>
+  </defs>
+
+  <rect class="slab" x="0" y="0" width="880" height="500" />
+  <rect class="inset" x="12" y="12" width="856" height="476" />
+
+  <text class="plaque" x="48" y="50">参伍以变</text>
+  <line class="plaque-rule" x1="48" y1="60" x2="132" y2="60" />
+
+  <g transform="translate(812 22)">
+    <rect class="seal-bg" x="0" y="0" width="38" height="38" />
+    <text class="seal-ch" x="19" y="17">参</text>
+    <text class="seal-ch" x="19" y="33">伍</text>
+  </g>
+
+  <circle class="ring dim" cx="236" cy="262" r="192" />
+  <circle class="ring" cx="236" cy="262" r="178" />
+  <circle class="ring dim" cx="236" cy="262" r="68" />
+  <g class="ticks" aria-hidden="true" transform="translate(0 -14)">
+    <line class="tick-major" x1="236" y1="95" x2="236" y2="84" />
+    <line class="tick" x1="252.21" y1="90.71" x2="252.73" y2="84.73" />
+    <line class="tick" x1="268.3" y1="92.83" x2="269.34" y2="86.92" />
+    <line class="tick" x1="284.14" y1="96.34" x2="285.69" y2="90.54" />
+    <line class="tick" x1="299.62" y1="101.22" x2="301.67" y2="95.58" />
+    <line class="tick" x1="314.61" y1="107.43" x2="317.14" y2="101.99" />
+    <line class="tick" x1="329" y1="114.92" x2="332" y2="109.72" />
+    <line class="tick" x1="342.69" y1="123.64" x2="346.13" y2="118.72" />
+    <line class="tick" x1="355.56" y1="133.52" x2="359.42" y2="128.92" />
+    <line class="tick-major" x1="363.99" y1="148.01" x2="371.76" y2="140.24" />
+    <line class="tick" x1="378.48" y1="156.44" x2="383.08" y2="152.58" />
+    <line class="tick" x1="388.36" y1="169.31" x2="393.28" y2="165.87" />
+    <line class="tick" x1="397.08" y1="183" x2="402.28" y2="180" />
+    <line class="tick" x1="404.57" y1="197.39" x2="410.01" y2="194.86" />
+    <line class="tick" x1="410.78" y1="212.38" x2="416.42" y2="210.33" />
+    <line class="tick" x1="415.66" y1="227.86" x2="421.46" y2="226.31" />
+    <line class="tick" x1="419.17" y1="243.7" x2="425.08" y2="242.66" />
+    <line class="tick" x1="421.29" y1="259.79" x2="427.27" y2="259.27" />
+    <line class="tick-major" x1="417" y1="276" x2="428" y2="276" />
+    <line class="tick" x1="421.29" y1="292.21" x2="427.27" y2="292.73" />
+    <line class="tick" x1="419.17" y1="308.3" x2="425.08" y2="309.34" />
+    <line class="tick" x1="415.66" y1="324.14" x2="421.46" y2="325.69" />
+    <line class="tick" x1="410.78" y1="339.62" x2="416.42" y2="341.67" />
+    <line class="tick" x1="404.57" y1="354.61" x2="410.01" y2="357.14" />
+    <line class="tick" x1="397.08" y1="369" x2="402.28" y2="372" />
+    <line class="tick" x1="388.36" y1="382.69" x2="393.28" y2="386.13" />
+    <line class="tick" x1="378.48" y1="395.56" x2="383.08" y2="399.42" />
+    <line class="tick-major" x1="363.99" y1="403.99" x2="371.76" y2="411.76" />
+    <line class="tick" x1="355.56" y1="418.48" x2="359.42" y2="423.08" />
+    <line class="tick" x1="342.69" y1="428.36" x2="346.13" y2="433.28" />
+    <line class="tick" x1="329" y1="437.08" x2="332" y2="442.28" />
+    <line class="tick" x1="314.61" y1="444.57" x2="317.14" y2="450.01" />
+    <line class="tick" x1="299.62" y1="450.78" x2="301.67" y2="456.42" />
+    <line class="tick" x1="284.14" y1="455.66" x2="285.69" y2="461.46" />
+    <line class="tick" x1="268.3" y1="459.17" x2="269.34" y2="465.08" />
+    <line class="tick" x1="252.21" y1="461.29" x2="252.73" y2="467.27" />
+    <line class="tick-major" x1="236" y1="457" x2="236" y2="468" />
+    <line class="tick" x1="219.79" y1="461.29" x2="219.27" y2="467.27" />
+    <line class="tick" x1="203.7" y1="459.17" x2="202.66" y2="465.08" />
+    <line class="tick" x1="187.86" y1="455.66" x2="186.31" y2="461.46" />
+    <line class="tick" x1="172.38" y1="450.78" x2="170.33" y2="456.42" />
+    <line class="tick" x1="157.39" y1="444.57" x2="154.86" y2="450.01" />
+    <line class="tick" x1="143" y1="437.08" x2="140" y2="442.28" />
+    <line class="tick" x1="129.31" y1="428.36" x2="125.87" y2="433.28" />
+    <line class="tick" x1="116.44" y1="418.48" x2="112.58" y2="423.08" />
+    <line class="tick-major" x1="108.01" y1="403.99" x2="100.24" y2="411.76" />
+    <line class="tick" x1="93.52" y1="395.56" x2="88.92" y2="399.42" />
+    <line class="tick" x1="83.64" y1="382.69" x2="78.72" y2="386.13" />
+    <line class="tick" x1="74.92" y1="369" x2="69.72" y2="372" />
+    <line class="tick" x1="67.43" y1="354.61" x2="61.99" y2="357.14" />
+    <line class="tick" x1="61.22" y1="339.62" x2="55.58" y2="341.67" />
+    <line class="tick" x1="56.34" y1="324.14" x2="50.54" y2="325.69" />
+    <line class="tick" x1="52.83" y1="308.3" x2="46.92" y2="309.34" />
+    <line class="tick" x1="50.71" y1="292.21" x2="44.73" y2="292.73" />
+    <line class="tick-major" x1="55" y1="276" x2="44" y2="276" />
+    <line class="tick" x1="50.71" y1="259.79" x2="44.73" y2="259.27" />
+    <line class="tick" x1="52.83" y1="243.7" x2="46.92" y2="242.66" />
+    <line class="tick" x1="56.34" y1="227.86" x2="50.54" y2="226.31" />
+    <line class="tick" x1="61.22" y1="212.38" x2="55.58" y2="210.33" />
+    <line class="tick" x1="67.43" y1="197.39" x2="61.99" y2="194.86" />
+    <line class="tick" x1="74.92" y1="183" x2="69.72" y2="180" />
+    <line class="tick" x1="83.64" y1="169.31" x2="78.72" y2="165.87" />
+    <line class="tick" x1="93.52" y1="156.44" x2="88.92" y2="152.58" />
+    <line class="tick-major" x1="108.01" y1="148.01" x2="100.24" y2="140.24" />
+    <line class="tick" x1="116.44" y1="133.52" x2="112.58" y2="128.92" />
+    <line class="tick" x1="129.31" y1="123.64" x2="125.87" y2="118.72" />
+    <line class="tick" x1="143" y1="114.92" x2="140" y2="109.72" />
+    <line class="tick" x1="157.39" y1="107.43" x2="154.86" y2="101.99" />
+    <line class="tick" x1="172.38" y1="101.22" x2="170.33" y2="95.58" />
+    <line class="tick" x1="187.86" y1="96.34" x2="186.31" y2="90.54" />
+    <line class="tick" x1="203.7" y1="92.83" x2="202.66" y2="86.92" />
+    <line class="tick" x1="219.79" y1="90.71" x2="219.27" y2="84.73" />
+  </g>
+
+  <g id="gua-qian" class="gua" data-id="qian" data-num="1" tabindex="0" role="button" aria-label="乾，金，健"
+    transform="translate(0 -14)">
+    <path class="slice" d="M167.88 111.55A178 178 0 0 1 304.12 111.55L262.02 213.18A68 68 0 0 0 209.98 213.18Z" />
+    <g class="yao-mark">
+      <line x1="224" y1="153.6" x2="248" y2="153.6" />
+      <line x1="224" y1="160" x2="248" y2="160" />
+      <line x1="224" y1="166.4" x2="248" y2="166.4" />
+    </g>
+    <text class="gua-name" x="236" y="124" dy="0.35em">乾</text>
+  </g>
+  <g id="gua-xun" class="gua" data-id="xun" data-num="5" tabindex="0" role="button" aria-label="巽，木，入"
+    transform="translate(0 -14)">
+    <path class="slice" d="M304.12 111.55A178 178 0 0 1 400.45 207.88L298.82 249.98A68 68 0 0 0 262.02 213.18Z" />
+    <g class="yao-mark">
+      <line x1="306.02" y1="187.58" x2="330.02" y2="187.58" />
+      <line x1="306.02" y1="193.98" x2="330.02" y2="193.98" />
+      <line x1="306.02" y1="200.38" x2="314.82" y2="200.38" />
+      <line x1="321.22" y1="200.38" x2="330.02" y2="200.38" />
+    </g>
+    <text class="gua-name" x="343.48" y="168.52" dy="0.35em">巽</text>
+  </g>
+  <g id="gua-kan" class="gua" data-id="kan" data-num="6" tabindex="0" role="button" aria-label="坎，水，陷"
+    transform="translate(0 -14)">
+    <path class="slice" d="M400.45 207.88A178 178 0 0 1 400.45 344.12L298.82 302.02A68 68 0 0 0 298.82 249.98Z" />
+    <g class="yao-mark">
+      <line x1="340" y1="269.6" x2="348.8" y2="269.6" />
+      <line x1="355.2" y1="269.6" x2="364" y2="269.6" />
+      <line x1="340" y1="276" x2="364" y2="276" />
+      <line x1="340" y1="282.4" x2="348.8" y2="282.4" />
+      <line x1="355.2" y1="282.4" x2="364" y2="282.4" />
+    </g>
+    <text class="gua-name" x="388" y="276" dy="0.35em">坎</text>
+  </g>
+  <g id="gua-gen" class="gua" data-id="gen" data-num="7" tabindex="0" role="button" aria-label="艮，土，止"
+    transform="translate(0 -14)">
+    <path class="slice" d="M400.45 344.12A178 178 0 0 1 304.12 440.45L262.02 338.82A68 68 0 0 0 298.82 302.02Z" />
+    <g class="yao-mark">
+      <line x1="306.02" y1="351.62" x2="330.02" y2="351.62" />
+      <line x1="306.02" y1="358.02" x2="314.82" y2="358.02" />
+      <line x1="321.22" y1="358.02" x2="330.02" y2="358.02" />
+      <line x1="306.02" y1="364.42" x2="314.82" y2="364.42" />
+      <line x1="321.22" y1="364.42" x2="330.02" y2="364.42" />
+    </g>
+    <text class="gua-name" x="343.48" y="383.48" dy="0.35em">艮</text>
+  </g>
+  <g id="gua-kun" class="gua" data-id="kun" data-num="8" tabindex="0" role="button" aria-label="坤，土，顺"
+    transform="translate(0 -14)">
+    <path class="slice" d="M304.12 440.45A178 178 0 0 1 167.88 440.45L209.98 338.82A68 68 0 0 0 262.02 338.82Z" />
+    <g class="yao-mark">
+      <line x1="224" y1="385.6" x2="232.8" y2="385.6" />
+      <line x1="239.2" y1="385.6" x2="248" y2="385.6" />
+      <line x1="224" y1="392" x2="232.8" y2="392" />
+      <line x1="239.2" y1="392" x2="248" y2="392" />
+      <line x1="224" y1="398.4" x2="232.8" y2="398.4" />
+      <line x1="239.2" y1="398.4" x2="248" y2="398.4" />
+    </g>
+    <text class="gua-name" x="236" y="428" dy="0.35em">坤</text>
+  </g>
+  <g id="gua-zhen" class="gua" data-id="zhen" data-num="4" tabindex="0" role="button" aria-label="震，木，动"
+    transform="translate(0 -14)">
+    <path class="slice" d="M167.88 440.45A178 178 0 0 1 71.55 344.12L173.18 302.02A68 68 0 0 0 209.98 338.82Z" />
+    <g class="yao-mark">
+      <line x1="141.98" y1="351.62" x2="150.78" y2="351.62" />
+      <line x1="157.18" y1="351.62" x2="165.98" y2="351.62" />
+      <line x1="141.98" y1="358.02" x2="150.78" y2="358.02" />
+      <line x1="157.18" y1="358.02" x2="165.98" y2="358.02" />
+      <line x1="141.98" y1="364.42" x2="165.98" y2="364.42" />
+    </g>
+    <text class="gua-name" x="128.52" y="383.48" dy="0.35em">震</text>
+  </g>
+  <g id="gua-li" class="gua" data-id="li" data-num="3" tabindex="0" role="button" aria-label="离，火，丽"
+    transform="translate(0 -14)">
+    <path class="slice" d="M71.55 344.12A178 178 0 0 1 71.55 207.88L173.18 249.98A68 68 0 0 0 173.18 302.02Z" />
+    <g class="yao-mark">
+      <line x1="108" y1="269.6" x2="132" y2="269.6" />
+      <line x1="108" y1="276" x2="116.8" y2="276" />
+      <line x1="123.2" y1="276" x2="132" y2="276" />
+      <line x1="108" y1="282.4" x2="132" y2="282.4" />
+    </g>
+    <text class="gua-name" x="84" y="276" dy="0.35em">离</text>
+  </g>
+  <g id="gua-dui" class="gua" data-id="dui" data-num="2" tabindex="0" role="button" aria-label="兑，金，悦"
+    transform="translate(0 -14)">
+    <path class="slice" d="M71.55 207.88A178 178 0 0 1 167.88 111.55L209.98 213.18A68 68 0 0 0 173.18 249.98Z" />
+    <g class="yao-mark">
+      <line x1="141.98" y1="187.58" x2="150.78" y2="187.58" />
+      <line x1="157.18" y1="187.58" x2="165.98" y2="187.58" />
+      <line x1="141.98" y1="193.98" x2="165.98" y2="193.98" />
+      <line x1="141.98" y1="200.38" x2="165.98" y2="200.38" />
+    </g>
+    <text class="gua-name" x="128.52" y="168.52" dy="0.35em">兑</text>
+  </g>
+
+  <g class="well">
+    <g transform="translate(236 262)">
+      <g class="spin">
+        <circle r="42" fill="url(#ink)" stroke="#c9a24a" stroke-width="1" />
+        <path d="M0-42A42 42 0 0 1 0 42A21 21 0 0 1 0 0A21 21 0 0 0 0-42Z" fill="#e6d2ae" />
+        <circle cy="-21" r="6" fill="#e6d2ae" />
+        <circle cy="21" r="6" fill="#070709" />
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="56s"
+          repeatCount="indefinite" />
+      </g>
+    </g>
+  </g>
+
+  <line class="spine" x1="474" y1="68" x2="474" y2="452" />
+  <g id="info">
+    <g id="info-home" class="panel">
+      <text class="kicker" x="508" y="82">潇湘人士</text>
+      <text class="display" x="508" y="138">觉照本心</text>
+      <line class="rule" x1="508" y1="168" x2="800" y2="168" />
+      <text class="verse" x="508" y="214">参伍以变，错综其数。</text>
+      <text class="verse" x="508" y="250">通其变，遂成天下之文。</text>
+      <text class="verse" x="508" y="286">极其数，遂定天下之象。</text>
+      <g transform="translate(508 312)" aria-hidden="true">
+        <rect class="paper" x="0" y="0" width="152" height="132" />
+        <rect class="paper-inset" x="3.5" y="3.5" width="145" height="125" />
+        <path class="dot-link" d="M56.2 14.0L62.8 14.0L69.4 14.0L76.0 14.0L82.6 14.0L89.2 14.0L95.8 14.0" />
+        <path class="dot-link" d="M69.4 26.0L82.6 26.0" />
+        <path class="dot-link" d="M16.0 38.0L16.0 44.6L16.0 51.2L16.0 57.8L16.0 64.4L16.0 71.0L16.0 77.6L16.0 84.2" />
+        <path class="dot-link" d="M30.0 54.5L30.0 61.1L30.0 67.7" />
+        <path class="dot-link" d="M76.0 63.4L76.0 76.6" />
+        <path class="dot-link" d="M69.4 70.0L82.6 70.0" />
+        <path class="dot-link" d="M62.8 56.8L69.4 56.8L76.0 56.8L82.6 56.8L89.2 56.8" />
+        <path class="dot-link" d="M62.8 83.2L69.4 83.2L76.0 83.2L82.6 83.2L89.2 83.2" />
+        <path class="dot-link" d="M62.8 56.8L62.8 83.2" />
+        <path class="dot-link" d="M89.2 56.8L89.2 83.2" />
+        <path class="dot-link" d="M122.0 60.1L122.0 66.7L122.0 73.3L122.0 79.9" />
+        <path class="dot-link"
+          d="M136.0 43.6L136.0 50.2L136.0 56.8L136.0 63.4L136.0 70.0L136.0 76.6L136.0 83.2L136.0 89.8L136.0 96.4" />
+        <path class="dot-link" d="M59.5 118.0L66.1 118.0L72.7 118.0L79.3 118.0L85.9 118.0L92.5 118.0" />
+        <circle class="dot-yang" cx="56.2" cy="14.0" r="2.15" />
+        <circle class="dot-yang" cx="62.8" cy="14.0" r="2.15" />
+        <circle class="dot-yang" cx="69.4" cy="14.0" r="2.15" />
+        <circle class="dot-yang" cx="76.0" cy="14.0" r="2.15" />
+        <circle class="dot-yang" cx="82.6" cy="14.0" r="2.15" />
+        <circle class="dot-yang" cx="89.2" cy="14.0" r="2.15" />
+        <circle class="dot-yang" cx="95.8" cy="14.0" r="2.15" />
+        <circle class="dot-yin" cx="69.4" cy="26.0" r="2.15" />
+        <circle class="dot-yin" cx="82.6" cy="26.0" r="2.15" />
+        <circle class="dot-yin" cx="16.0" cy="38.0" r="2.15" />
+        <circle class="dot-yin" cx="16.0" cy="44.6" r="2.15" />
+        <circle class="dot-yin" cx="16.0" cy="51.2" r="2.15" />
+        <circle class="dot-yin" cx="16.0" cy="57.8" r="2.15" />
+        <circle class="dot-yin" cx="16.0" cy="64.4" r="2.15" />
+        <circle class="dot-yin" cx="16.0" cy="71.0" r="2.15" />
+        <circle class="dot-yin" cx="16.0" cy="77.6" r="2.15" />
+        <circle class="dot-yin" cx="16.0" cy="84.2" r="2.15" />
+        <circle class="dot-yang" cx="30.0" cy="54.5" r="2.15" />
+        <circle class="dot-yang" cx="30.0" cy="61.1" r="2.15" />
+        <circle class="dot-yang" cx="30.0" cy="67.7" r="2.15" />
+        <circle class="dot-yang" cx="76.0" cy="63.4" r="2.15" />
+        <circle class="dot-yang" cx="69.4" cy="70.0" r="2.15" />
+        <circle class="dot-yang" cx="76.0" cy="70.0" r="2.15" />
+        <circle class="dot-yang" cx="82.6" cy="70.0" r="2.15" />
+        <circle class="dot-yang" cx="76.0" cy="76.6" r="2.15" />
+        <circle class="dot-yin" cx="62.8" cy="56.8" r="2.15" />
+        <circle class="dot-yin" cx="69.4" cy="56.8" r="2.15" />
+        <circle class="dot-yin" cx="76.0" cy="56.8" r="2.15" />
+        <circle class="dot-yin" cx="82.6" cy="56.8" r="2.15" />
+        <circle class="dot-yin" cx="89.2" cy="56.8" r="2.15" />
+        <circle class="dot-yin" cx="62.8" cy="83.2" r="2.15" />
+        <circle class="dot-yin" cx="69.4" cy="83.2" r="2.15" />
+        <circle class="dot-yin" cx="76.0" cy="83.2" r="2.15" />
+        <circle class="dot-yin" cx="82.6" cy="83.2" r="2.15" />
+        <circle class="dot-yin" cx="89.2" cy="83.2" r="2.15" />
+        <circle class="dot-yin" cx="122.0" cy="60.1" r="2.15" />
+        <circle class="dot-yin" cx="122.0" cy="66.7" r="2.15" />
+        <circle class="dot-yin" cx="122.0" cy="73.3" r="2.15" />
+        <circle class="dot-yin" cx="122.0" cy="79.9" r="2.15" />
+        <circle class="dot-yang" cx="136.0" cy="43.6" r="2.15" />
+        <circle class="dot-yang" cx="136.0" cy="50.2" r="2.15" />
+        <circle class="dot-yang" cx="136.0" cy="56.8" r="2.15" />
+        <circle class="dot-yang" cx="136.0" cy="63.4" r="2.15" />
+        <circle class="dot-yang" cx="136.0" cy="70.0" r="2.15" />
+        <circle class="dot-yang" cx="136.0" cy="76.6" r="2.15" />
+        <circle class="dot-yang" cx="136.0" cy="83.2" r="2.15" />
+        <circle class="dot-yang" cx="136.0" cy="89.8" r="2.15" />
+        <circle class="dot-yang" cx="136.0" cy="96.4" r="2.15" />
+        <circle class="dot-yang" cx="76.0" cy="104.0" r="2.15" />
+        <circle class="dot-yin" cx="59.5" cy="118.0" r="2.15" />
+        <circle class="dot-yin" cx="66.1" cy="118.0" r="2.15" />
+        <circle class="dot-yin" cx="72.7" cy="118.0" r="2.15" />
+        <circle class="dot-yin" cx="79.3" cy="118.0" r="2.15" />
+        <circle class="dot-yin" cx="85.9" cy="118.0" r="2.15" />
+        <circle class="dot-yin" cx="92.5" cy="118.0" r="2.15" />
+      </g>
+      <g transform="translate(668 312)" aria-hidden="true">
+        <rect class="paper" x="0" y="0" width="152" height="132" />
+        <rect class="paper-inset" x="3.5" y="3.5" width="145" height="125" />
+        <g transform="translate(9.2 9.7)">
+          <path class="dot-link" d="M56.6 51.8L79.0 51.8" />
+          <path class="dot-link" d="M67.8 40.6L67.8 63.0" />
+          <path class="dot-link" d="M10.4 35.0L10.4 68.6" />
+          <path class="dot-link" d="M125.2 18.2L125.2 85.4" />
+          <path class="dot-link" d="M34.2 2.0L101.4 2.0" />
+          <path class="dot-link" d="M9.0 102.3L32.7 78.6" />
+          <path class="dot-link" d="M17.3 110.6L41.1 86.9" />
+          <path class="dot-link" d="M9.0 102.3L17.3 110.6" />
+          <path class="dot-link" d="M32.7 78.6L41.1 86.9" />
+          <path class="dot-link" d="M8.4 14.2L20.3 26.1" />
+          <path class="dot-link" d="M18.3 4.3L30.2 16.2" />
+          <path class="dot-link" d="M8.4 14.2L18.3 4.3" />
+          <path class="dot-link" d="M20.3 26.1L30.2 16.2" />
+          <path class="dot-link" d="M107.4 16.2L120.5 3.1" />
+          <path class="dot-link" d="M93.1 93.4L109.0 109.3" />
+          <path class="dot-link" d="M101.4 85.1L117.3 100.9" />
+          <path class="dot-link" d="M93.1 93.4L101.4 85.1" />
+          <path class="dot-link" d="M109.0 109.3L117.3 100.9" />
+          <circle class="dot-yang" cx="67.8" cy="51.8" r="2.05" />
+          <circle class="dot-yang" cx="56.6" cy="51.8" r="2.05" />
+          <circle class="dot-yang" cx="79.0" cy="51.8" r="2.05" />
+          <circle class="dot-yang" cx="67.8" cy="63.0" r="2.05" />
+          <circle class="dot-yang" cx="67.8" cy="40.6" r="2.05" />
+          <circle class="dot-yang" cx="10.4" cy="35.0" r="2.05" />
+          <circle class="dot-yang" cx="10.4" cy="51.8" r="2.05" />
+          <circle class="dot-yang" cx="10.4" cy="68.6" r="2.05" />
+          <circle class="dot-yang" cx="125.2" cy="18.2" r="2.05" />
+          <circle class="dot-yang" cx="125.2" cy="29.4" r="2.05" />
+          <circle class="dot-yang" cx="125.2" cy="40.6" r="2.05" />
+          <circle class="dot-yang" cx="125.2" cy="51.8" r="2.05" />
+          <circle class="dot-yang" cx="125.2" cy="63.0" r="2.05" />
+          <circle class="dot-yang" cx="125.2" cy="74.2" r="2.05" />
+          <circle class="dot-yang" cx="125.2" cy="85.4" r="2.05" />
+          <circle class="dot-yang" cx="34.2" cy="2.0" r="2.05" />
+          <circle class="dot-yang" cx="42.6" cy="2.0" r="2.05" />
+          <circle class="dot-yang" cx="51.0" cy="2.0" r="2.05" />
+          <circle class="dot-yang" cx="59.4" cy="2.0" r="2.05" />
+          <circle class="dot-yang" cx="67.8" cy="2.0" r="2.05" />
+          <circle class="dot-yang" cx="76.2" cy="2.0" r="2.05" />
+          <circle class="dot-yang" cx="84.6" cy="2.0" r="2.05" />
+          <circle class="dot-yang" cx="93.0" cy="2.0" r="2.05" />
+          <circle class="dot-yang" cx="101.4" cy="2.0" r="2.05" />
+          <circle class="dot-yang" cx="67.8" cy="101.7" r="2.05" />
+          <circle class="dot-yin" cx="9.0" cy="102.3" r="2.05" />
+          <circle class="dot-yin" cx="17.3" cy="110.6" r="2.05" />
+          <circle class="dot-yin" cx="16.9" cy="94.4" r="2.05" />
+          <circle class="dot-yin" cx="25.2" cy="102.7" r="2.05" />
+          <circle class="dot-yin" cx="24.8" cy="86.5" r="2.05" />
+          <circle class="dot-yin" cx="33.1" cy="94.8" r="2.05" />
+          <circle class="dot-yin" cx="32.7" cy="78.6" r="2.05" />
+          <circle class="dot-yin" cx="41.1" cy="86.9" r="2.05" />
+          <circle class="dot-yin" cx="8.4" cy="14.2" r="2.05" />
+          <circle class="dot-yin" cx="18.3" cy="4.3" r="2.05" />
+          <circle class="dot-yin" cx="20.3" cy="26.1" r="2.05" />
+          <circle class="dot-yin" cx="30.2" cy="16.2" r="2.05" />
+          <circle class="dot-yin" cx="107.4" cy="16.2" r="2.05" />
+          <circle class="dot-yin" cx="120.5" cy="3.1" r="2.05" />
+          <circle class="dot-yin" cx="93.1" cy="93.4" r="2.05" />
+          <circle class="dot-yin" cx="101.4" cy="85.1" r="2.05" />
+          <circle class="dot-yin" cx="101.1" cy="101.3" r="2.05" />
+          <circle class="dot-yin" cx="109.4" cy="93.0" r="2.05" />
+          <circle class="dot-yin" cx="109.0" cy="109.3" r="2.05" />
+          <circle class="dot-yin" cx="117.3" cy="100.9" r="2.05" />
+        </g>
+      </g>
+    </g>
+
+    <g id="info-qian" class="panel">
+      <text class="kicker" x="508" y="82">先天 · 南</text>
+      <text class="display" x="508" y="138">乾</text>
+      <g class="yao-lg" transform="translate(786 108)">
+        <line x1="-16" y1="0" x2="16" y2="0" />
+        <line x1="-16" y1="10" x2="16" y2="10" />
+        <line x1="-16" y1="20" x2="16" y2="20" />
+      </g>
+      <text class="xiang" x="508" y="176">天</text>
+      <line class="rule" x1="508" y1="200" x2="800" y2="200" />
+      <text class="verse" x="508" y="238">天行健。</text>
+      <text class="verse" x="508" y="272">君子以自强不息。</text>
+      <line class="rule" x1="508" y1="306" x2="800" y2="306" />
+      <text class="meta-label" x="508" y="338">数</text>
+      <text class="meta-val" x="508" y="364">一</text>
+      <text class="meta-label" x="600" y="338">行</text>
+      <text class="meta-val" x="600" y="364">金</text>
+      <text class="meta-label" x="692" y="338">人</text>
+      <text class="meta-val" x="692" y="364">父</text>
+      <text class="meta-label" x="508" y="400">对</text>
+      <text class="meta-val" x="508" y="426">坤</text>
+      <text class="colophon" x="600" y="426">天地定位</text>
+    </g>
+    <g id="info-kun" class="panel">
+      <text class="kicker" x="508" y="82">先天 · 北</text>
+      <text class="display" x="508" y="138">坤</text>
+      <g class="yao-lg" transform="translate(786 108)">
+        <line x1="-16" y1="0" x2="-3" y2="0" />
+        <line x1="3" y1="0" x2="16" y2="0" />
+        <line x1="-16" y1="10" x2="-3" y2="10" />
+        <line x1="3" y1="10" x2="16" y2="10" />
+        <line x1="-16" y1="20" x2="-3" y2="20" />
+        <line x1="3" y1="20" x2="16" y2="20" />
+      </g>
+      <text class="xiang" x="508" y="176">地</text>
+      <line class="rule" x1="508" y1="200" x2="800" y2="200" />
+      <text class="verse" x="508" y="238">地势坤。</text>
+      <text class="verse" x="508" y="272">君子以厚德载物。</text>
+      <line class="rule" x1="508" y1="306" x2="800" y2="306" />
+      <text class="meta-label" x="508" y="338">数</text>
+      <text class="meta-val" x="508" y="364">八</text>
+      <text class="meta-label" x="600" y="338">行</text>
+      <text class="meta-val" x="600" y="364">土</text>
+      <text class="meta-label" x="692" y="338">人</text>
+      <text class="meta-val" x="692" y="364">母</text>
+      <text class="meta-label" x="508" y="400">对</text>
+      <text class="meta-val" x="508" y="426">乾</text>
+      <text class="colophon" x="600" y="426">天地定位</text>
+    </g>
+    <g id="info-li" class="panel">
+      <text class="kicker" x="508" y="82">先天 · 东</text>
+      <text class="display" x="508" y="138">离</text>
+      <g class="yao-lg" transform="translate(786 108)">
+        <line x1="-16" y1="0" x2="16" y2="0" />
+        <line x1="-16" y1="10" x2="-3" y2="10" />
+        <line x1="3" y1="10" x2="16" y2="10" />
+        <line x1="-16" y1="20" x2="16" y2="20" />
+      </g>
+      <text class="xiang" x="508" y="176">火</text>
+      <line class="rule" x1="508" y1="200" x2="800" y2="200" />
+      <text class="verse" x="508" y="238">明两作，离。</text>
+      <text class="verse" x="508" y="272">大人以继明照四方。</text>
+      <line class="rule" x1="508" y1="306" x2="800" y2="306" />
+      <text class="meta-label" x="508" y="338">数</text>
+      <text class="meta-val" x="508" y="364">三</text>
+      <text class="meta-label" x="600" y="338">行</text>
+      <text class="meta-val" x="600" y="364">火</text>
+      <text class="meta-label" x="692" y="338">人</text>
+      <text class="meta-val" x="692" y="364">中女</text>
+      <text class="meta-label" x="508" y="400">对</text>
+      <text class="meta-val" x="508" y="426">坎</text>
+      <text class="colophon" x="600" y="426">水火不相射</text>
+    </g>
+    <g id="info-kan" class="panel">
+      <text class="kicker" x="508" y="82">先天 · 西</text>
+      <text class="display" x="508" y="138">坎</text>
+      <g class="yao-lg" transform="translate(786 108)">
+        <line x1="-16" y1="0" x2="-3" y2="0" />
+        <line x1="3" y1="0" x2="16" y2="0" />
+        <line x1="-16" y1="10" x2="16" y2="10" />
+        <line x1="-16" y1="20" x2="-3" y2="20" />
+        <line x1="3" y1="20" x2="16" y2="20" />
+      </g>
+      <text class="xiang" x="508" y="176">水</text>
+      <line class="rule" x1="508" y1="200" x2="800" y2="200" />
+      <text class="verse" x="508" y="238">水洊至，习坎。</text>
+      <text class="verse" x="508" y="272">君子以常德行。</text>
+      <line class="rule" x1="508" y1="306" x2="800" y2="306" />
+      <text class="meta-label" x="508" y="338">数</text>
+      <text class="meta-val" x="508" y="364">六</text>
+      <text class="meta-label" x="600" y="338">行</text>
+      <text class="meta-val" x="600" y="364">水</text>
+      <text class="meta-label" x="692" y="338">人</text>
+      <text class="meta-val" x="692" y="364">中男</text>
+      <text class="meta-label" x="508" y="400">对</text>
+      <text class="meta-val" x="508" y="426">离</text>
+      <text class="colophon" x="600" y="426">水火不相射</text>
+    </g>
+    <g id="info-dui" class="panel">
+      <text class="kicker" x="508" y="82">先天 · 东南</text>
+      <text class="display" x="508" y="138">兑</text>
+      <g class="yao-lg" transform="translate(786 108)">
+        <line x1="-16" y1="0" x2="-3" y2="0" />
+        <line x1="3" y1="0" x2="16" y2="0" />
+        <line x1="-16" y1="10" x2="16" y2="10" />
+        <line x1="-16" y1="20" x2="16" y2="20" />
+      </g>
+      <text class="xiang" x="508" y="176">泽</text>
+      <line class="rule" x1="508" y1="200" x2="800" y2="200" />
+      <text class="verse" x="508" y="238">丽泽，兑。</text>
+      <text class="verse" x="508" y="272">君子以朋友讲习。</text>
+      <line class="rule" x1="508" y1="306" x2="800" y2="306" />
+      <text class="meta-label" x="508" y="338">数</text>
+      <text class="meta-val" x="508" y="364">二</text>
+      <text class="meta-label" x="600" y="338">行</text>
+      <text class="meta-val" x="600" y="364">金</text>
+      <text class="meta-label" x="692" y="338">人</text>
+      <text class="meta-val" x="692" y="364">少女</text>
+      <text class="meta-label" x="508" y="400">对</text>
+      <text class="meta-val" x="508" y="426">艮</text>
+      <text class="colophon" x="600" y="426">山泽通气</text>
+    </g>
+    <g id="info-gen" class="panel">
+      <text class="kicker" x="508" y="82">先天 · 西北</text>
+      <text class="display" x="508" y="138">艮</text>
+      <g class="yao-lg" transform="translate(786 108)">
+        <line x1="-16" y1="0" x2="16" y2="0" />
+        <line x1="-16" y1="10" x2="-3" y2="10" />
+        <line x1="3" y1="10" x2="16" y2="10" />
+        <line x1="-16" y1="20" x2="-3" y2="20" />
+        <line x1="3" y1="20" x2="16" y2="20" />
+      </g>
+      <text class="xiang" x="508" y="176">山</text>
+      <line class="rule" x1="508" y1="200" x2="800" y2="200" />
+      <text class="verse" x="508" y="238">兼山，艮。</text>
+      <text class="verse" x="508" y="272">君子以思不出其位。</text>
+      <line class="rule" x1="508" y1="306" x2="800" y2="306" />
+      <text class="meta-label" x="508" y="338">数</text>
+      <text class="meta-val" x="508" y="364">七</text>
+      <text class="meta-label" x="600" y="338">行</text>
+      <text class="meta-val" x="600" y="364">土</text>
+      <text class="meta-label" x="692" y="338">人</text>
+      <text class="meta-val" x="692" y="364">少男</text>
+      <text class="meta-label" x="508" y="400">对</text>
+      <text class="meta-val" x="508" y="426">兑</text>
+      <text class="colophon" x="600" y="426">山泽通气</text>
+    </g>
+    <g id="info-zhen" class="panel">
+      <text class="kicker" x="508" y="82">先天 · 东北</text>
+      <text class="display" x="508" y="138">震</text>
+      <g class="yao-lg" transform="translate(786 108)">
+        <line x1="-16" y1="0" x2="-3" y2="0" />
+        <line x1="3" y1="0" x2="16" y2="0" />
+        <line x1="-16" y1="10" x2="-3" y2="10" />
+        <line x1="3" y1="10" x2="16" y2="10" />
+        <line x1="-16" y1="20" x2="16" y2="20" />
+      </g>
+      <text class="xiang" x="508" y="176">雷</text>
+      <line class="rule" x1="508" y1="200" x2="800" y2="200" />
+      <text class="verse" x="508" y="238">洊雷，震。</text>
+      <text class="verse" x="508" y="272">君子以恐惧修省。</text>
+      <line class="rule" x1="508" y1="306" x2="800" y2="306" />
+      <text class="meta-label" x="508" y="338">数</text>
+      <text class="meta-val" x="508" y="364">四</text>
+      <text class="meta-label" x="600" y="338">行</text>
+      <text class="meta-val" x="600" y="364">木</text>
+      <text class="meta-label" x="692" y="338">人</text>
+      <text class="meta-val" x="692" y="364">长男</text>
+      <text class="meta-label" x="508" y="400">对</text>
+      <text class="meta-val" x="508" y="426">巽</text>
+      <text class="colophon" x="600" y="426">雷风相薄</text>
+    </g>
+    <g id="info-xun" class="panel">
+      <text class="kicker" x="508" y="82">先天 · 西南</text>
+      <text class="display" x="508" y="138">巽</text>
+      <g class="yao-lg" transform="translate(786 108)">
+        <line x1="-16" y1="0" x2="16" y2="0" />
+        <line x1="-16" y1="10" x2="16" y2="10" />
+        <line x1="-16" y1="20" x2="-3" y2="20" />
+        <line x1="3" y1="20" x2="16" y2="20" />
+      </g>
+      <text class="xiang" x="508" y="176">风</text>
+      <line class="rule" x1="508" y1="200" x2="800" y2="200" />
+      <text class="verse" x="508" y="238">随风，巽。</text>
+      <text class="verse" x="508" y="272">君子以申命行事。</text>
+      <line class="rule" x1="508" y1="306" x2="800" y2="306" />
+      <text class="meta-label" x="508" y="338">数</text>
+      <text class="meta-val" x="508" y="364">五</text>
+      <text class="meta-label" x="600" y="338">行</text>
+      <text class="meta-val" x="600" y="364">木</text>
+      <text class="meta-label" x="692" y="338">人</text>
+      <text class="meta-val" x="692" y="364">长女</text>
+      <text class="meta-label" x="508" y="400">对</text>
+      <text class="meta-val" x="508" y="426">震</text>
+      <text class="colophon" x="600" y="426">雷风相薄</text>
+    </g>
+  </g>
+  <line class="plaque-rule" x1="194" y1="458" x2="278" y2="458" />
+  <text class="plaque center" x="239" y="474">错综其数</text>
+
+</svg>
